@@ -1,0 +1,31 @@
+default:
+    method: "shell"
+
+Default Spark 2.4 & Scala 2.11:
+    type: "hummingbird"
+    method: "bluemix"
+    spark.master: "aHR0cHM6Ly9zcGFyay5wcml2YXRlLmV1LWdiLmFlLmNsb3VkLmlibS5jb20vYWUvMzRlMmM0MDAzYjJmNDA3N2JiMWE4NzYwNGY3YzY2NmUvamtnL2FwaS9rZXJuZWxz"
+    hb.api.key: "Z1szlP32LcrxzT8J2u8MRZCOYMOtCk9V6WyFfIIFwh+ss3XAnXeObWhxf56smV/s57gzZw=="
+    hb.spec.display: "MiBFeGVjdXRvcnM6IDEgdkNQVSBhbmQgNCBHQiBSQU0sIERyaXZlcjogMSB2Q1BVIGFuZCA0IEdCIFJBTQ=="
+    hb.worker.cpu: "MQ=="
+    hb.template: "c3BhcmstMi40LjAtcnN0dWRpby10ZW1wbGF0ZQ=="
+    hb.env.guid: "c3BhcmsyNHNjYWxhLWI2ODczZjUwLWMzZDktNGUxMC1hNzgwLTk3MGIxNDUzNWMwMA=="
+    hb.kernel.cpu: "MQ=="
+    hb.kernel.memory: "NA=="
+    hb.workers: "Mg=="
+    hb.worker.memory: "NA=="
+
+Default Spark 2.3 & Scala 2.11:
+    type: "hummingbird"
+    spark.master: "aHR0cHM6Ly9zcGFyay5wcml2YXRlLmV1LWdiLmFlLmNsb3VkLmlibS5jb20vYWUvMzRlMmM0MDAzYjJmNDA3N2JiMWE4NzYwNGY3YzY2NmUvamtnL2FwaS9rZXJuZWxz"
+    hb.spec.display: "MiBFeGVjdXRvcnM6IDEgdkNQVSBhbmQgNCBHQiBSQU0sIERyaXZlcjogMSB2Q1BVIGFuZCA0IEdCIFJBTQ=="
+    hb.kernel.cpu: "MQ=="
+    hb.kernel.memory: "NA=="
+    hb.workers: "Mg=="
+    hb.worker.cpu: "MQ=="
+    method: "bluemix"
+    hb.api.key: "YIA4Bp9cdXrIiIIzARl+Rwk4awDcgLsYD2teDoFWyr5tJiigVuINEyZSBfdUdY7nUILpow=="
+    hb.env.guid: "ZGVmYXVsdHNwYXJrc2NhbGExeDQtYjY4NzNmNTAtYzNkOS00ZTEwLWE3ODAtOTcwYjE0NTM1YzAw"
+    hb.worker.memory: "NA=="
+    hb.template: "c3BhcmstMi4zLjAtcnN0dWRpby10ZW1wbGF0ZQ=="
+

@@ -1,0 +1,78 @@
+---
+title: "Shiny Assignment"
+author: "Kevin Naik"
+date: "`r Sys.Date()`"
+output: ioslides_presentation
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+## Introduction 
+
+- The core idea is to explore the weather data of Australia available in R.
+- The project test and uses ggplot, leaflet with Shiny.
+- Basic concepts of time series graph and correlation is implemented.
+
+## Inputs for users 
+
+- Region in Australia from list
+- Factor like rainfall, temperature
+- Start Date
+- End Date
+- Coleration factors 1 and 2
+
+## Output in Tabs
+
+- Maps when region is selected it will change using longitude and latitude. 
+- Time series plot with factor and date selected by user.
+- Coleration Scatter plot with trend line.
+
+## Example of Station name 
+
+```{r echo = FALSE, results='hide'}
+library(leaflet)
+library(rattle)
+m <- leaflet() %>%
+   setView(lng = 151.209900, lat = -33.865143, zoom = 5)  %>% 
+   addTiles() %>% 
+   addMarkers(lat = locationsAUS$latitude,lng = locationsAUS$longitude,popup = locationsAUS$stnID, label = locationsAUS$name)
+```
+
+```{r echo = FALSE}
+m
+```
+
+## Example of Time Series
+
+```{r echo = FALSE, results='hide'}
+library(dplyr)
+prep <- weatherAUS %>% 
+        filter(weatherAUS$Location == "Albury" & between(weatherAUS$Date, as.Date("2008-12-02"), as.Date("2011-01-01")) & !is.na("MinTemp")) %>% 
+        select("Date","MinTemp")
+```
+
+```{r echo = FALSE}
+plot(prep)
+```
+
+## Example of GG Plot
+```{r echo = FALSE, results='hide'}
+library(dplyr)
+library(ggplot2)
+test <- weatherAUS %>%
+            filter(weatherAUS$Location == "Albury" & 
+                       between(weatherAUS$Date, as.Date("2008-12-02"),
+                                   as.Date("2011-01-01"))) %>%
+            select("MinTemp","MaxTemp")
+        test <- data.frame(test)
+```
+
+```{r echo = FALSE}
+ggplot(test, aes(MinTemp, MaxTemp)) + 
+            geom_point(color="#69b3a2",alpha = 0.5 ) +
+            geom_smooth(color="red", fill="#be79df", se=TRUE)
+```
+
+## Thank you
